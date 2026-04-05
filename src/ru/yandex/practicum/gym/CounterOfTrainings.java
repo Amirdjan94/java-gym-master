@@ -20,7 +20,7 @@ public class CounterOfTrainings implements Comparable<CounterOfTrainings> {
 
     @Override
     public int compareTo(CounterOfTrainings o) {
-        return o.count-this.count;
+        return o.count - this.count;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class CounterOfTrainings implements Comparable<CounterOfTrainings> {
         return Objects.hashCode(coach);
     }
 
-    public void incrementCount(){
+    public void incrementCount() {
         this.count++;
     }
 
