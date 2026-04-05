@@ -62,10 +62,10 @@ public class Timetable {
         return timetable.get(dayOfWeek).get(timeOfDay);
     }
 
-    public List <CounterOfTrainings> getCountByCoaches() {
-        List <CounterOfTrainings> counterOfTrainingsList = new ArrayList<>();
+    public List<CounterOfTrainings> getCountByCoaches() {
+        List<CounterOfTrainings> counterOfTrainingsList = new ArrayList<>();
 
-        if (timetable.isEmpty()){
+        if (timetable.isEmpty()) {
             return null;
         } else {
             for (TreeMap<TimeOfDay, List<TrainingSession>> value : timetable.values()) {
@@ -81,7 +81,7 @@ public class Timetable {
         return counterOfTrainingsList;
     }
 
-    public void incrementCountSessionForCoach(TrainingSession trainingSession, List <CounterOfTrainings> counterOfTrainingsList) {
+    public void incrementCountSessionForCoach(TrainingSession trainingSession, List<CounterOfTrainings> counterOfTrainingsList) {
         if (counterOfTrainingsList.contains(new CounterOfTrainings(trainingSession.getCoach()))) {
             int index = counterOfTrainingsList.indexOf(new CounterOfTrainings(trainingSession.getCoach()));
             counterOfTrainingsList.get(index).incrementCount();
