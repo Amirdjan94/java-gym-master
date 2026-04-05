@@ -21,13 +21,13 @@ public class Timetable {
         }
     }
 
-    private void addTrainingSessionForCurrentDayAndTime(TrainingSession trainingSession){
+    private void addTrainingSessionForCurrentDayAndTime(TrainingSession trainingSession) {
         DayOfWeek dayOfWeek = trainingSession.getDayOfWeek();
         TimeOfDay timeOfDay = trainingSession.getTimeOfDay();
         timetable.get(dayOfWeek).get(timeOfDay).add(trainingSession);
     }
 
-    private void addTrainingSessionForCurrentDay(TrainingSession trainingSession){
+    private void addTrainingSessionForCurrentDay(TrainingSession trainingSession) {
         DayOfWeek dayOfWeek = trainingSession.getDayOfWeek();
         TimeOfDay timeOfDay = trainingSession.getTimeOfDay();
         List<TrainingSession> trainingSessionList = new ArrayList<>();
@@ -36,7 +36,7 @@ public class Timetable {
         timetable.get(dayOfWeek).put(timeOfDay,trainingSessionList);
     }
 
-    private void addTrainingSessionForNewDay(TrainingSession trainingSession){
+    private void addTrainingSessionForNewDay(TrainingSession trainingSession) {
         DayOfWeek dayOfWeek = trainingSession.getDayOfWeek();
         TimeOfDay timeOfDay = trainingSession.getTimeOfDay();
         TreeMap<TimeOfDay, List<TrainingSession>> trainingsOfDayOfWeek =
@@ -81,7 +81,7 @@ public class Timetable {
         return counterOfTrainingsList;
     }
 
-    public void incrementCountSessionForCoach(TrainingSession trainingSession, List <CounterOfTrainings> counterOfTrainingsList){
+    public void incrementCountSessionForCoach(TrainingSession trainingSession, List <CounterOfTrainings> counterOfTrainingsList) {
         if (counterOfTrainingsList.contains(new CounterOfTrainings(trainingSession.getCoach()))) {
             int index = counterOfTrainingsList.indexOf(new CounterOfTrainings(trainingSession.getCoach()));
             counterOfTrainingsList.get(index).incrementCount();
