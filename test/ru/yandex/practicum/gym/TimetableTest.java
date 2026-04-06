@@ -36,7 +36,7 @@ public class TimetableTest {
         Assertions.assertEquals(1, timetable.getTrainingSessionsForDay(DayOfWeek.MONDAY).get(timeOfDay).size(),
                 "За понедельник должно вернутся одно занятие");
         //Проверить, что за вторник не вернулось занятий
-        Assertions.assertNull(timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY),
+        Assertions.assertEquals(0, timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY).size(),
                 "За вторник должны отсутсвовать занятия");
     }
 
@@ -73,7 +73,7 @@ public class TimetableTest {
                 "Вторым должно быть занятие в 20:00");
 
         // Проверить, что за вторник не вернулось занятий
-        Assertions.assertNull(timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY),
+        Assertions.assertEquals(0, timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY).size(),
                 "За вторник должны отсутсвовать занятия");
 
     }
@@ -110,14 +110,14 @@ public class TimetableTest {
 
     @Test
     public void testGetTrainingSessionsForDayFromEmptyTimetable() {
-       Assertions.assertNull(timetable.getTrainingSessionsForDay(DayOfWeek.THURSDAY),
-                "При запросе списка тренировок за день из пустого списка, должно вернутся null");
+       Assertions.assertEquals(0, timetable.getTrainingSessionsForDay(DayOfWeek.THURSDAY).size(),
+                "При запросе списка тренировок за день из пустого списка, должен вернуться пустой список");
     }
 
     @Test
     public void testGetTrainingSessionsForDayAndTimeFromEmptyTimetable() {
-        Assertions.assertNull(timetable.getTrainingSessionsForDayAndTime(DayOfWeek.THURSDAY, new TimeOfDay(13, 0)),
-                "При запросе списка тренировок за определенный день и время из пустого списка, должно вернутся null");
+        Assertions.assertEquals(0, timetable.getTrainingSessionsForDayAndTime(DayOfWeek.THURSDAY, new TimeOfDay(13, 0)).size(),
+                "При запросе списка тренировок за определенный день и время из пустого списка, должен вернуться пустой список");
     }
 
     @Test

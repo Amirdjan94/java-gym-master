@@ -51,13 +51,16 @@ public class Timetable {
 
     public TreeMap<TimeOfDay, List<TrainingSession>> getTrainingSessionsForDay(DayOfWeek dayOfWeek) {
         //как реализовать, тоже непонятно, но сложность должна быть О(1)
+        if (timetable.get(dayOfWeek) == null){
+            return new TreeMap<>();
+        }
         return timetable.get(dayOfWeek);
     }
 
     public List<TrainingSession> getTrainingSessionsForDayAndTime(DayOfWeek dayOfWeek, TimeOfDay timeOfDay) {
         //как реализовать, тоже непонятно, но сложность должна быть О(1)
         if (timetable.get(dayOfWeek) == null) {
-            return null;
+            return new ArrayList<>();
         }
         return timetable.get(dayOfWeek).get(timeOfDay);
     }
