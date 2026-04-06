@@ -33,7 +33,7 @@ public class Timetable {
         List<TrainingSession> trainingSessionList = new ArrayList<>();
 
         trainingSessionList.add(trainingSession);
-        timetable.get(dayOfWeek).put(timeOfDay,trainingSessionList);
+        timetable.get(dayOfWeek).put(timeOfDay, trainingSessionList);
     }
 
     private void addTrainingSessionForNewDay(TrainingSession trainingSession) {
@@ -51,7 +51,7 @@ public class Timetable {
 
     public TreeMap<TimeOfDay, List<TrainingSession>> getTrainingSessionsForDay(DayOfWeek dayOfWeek) {
         //как реализовать, тоже непонятно, но сложность должна быть О(1)
-        if (timetable.get(dayOfWeek) == null){
+        if (timetable.get(dayOfWeek) == null) {
             return new TreeMap<>();
         }
         return timetable.get(dayOfWeek);
