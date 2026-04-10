@@ -33,4 +33,14 @@ public class TrainingSession {
     public TimeOfDay getTimeOfDay() {
         return timeOfDay;
     }
+
+    @Override
+    public String toString() {
+        return "TrainingSession{" +
+                "coach=" + coach +
+                ", group=" + group +
+                ", dayOfWeek=" + dayOfWeek +
+                ", timeOfDay=" + timeOfDay +
+                '}';
+    }
 }
